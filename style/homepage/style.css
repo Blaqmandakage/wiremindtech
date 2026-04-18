@@ -140,6 +140,8 @@ padding-right: 1rem;
 
 }
 .power-bank-product{
+    overflow: hidden;
+    overflow-wrap: break-word;
     width:100%;
      border-radius: 10px;
     overflow: hidden;
@@ -147,10 +149,11 @@ padding-right: 1rem;
     /* width:200px; */
 }
 .power-bank-images{
+    overflow-wrap: break-word;
     position: relative;
      width:100%;
     height:200px; 
-     /* overflow: hidden; */
+     overflow: hidden;
    
 }
 .power-bank-image{
@@ -158,10 +161,9 @@ padding-right: 1rem;
     width:100%;
     height:100%
 }
-/* .power-bank-name, .power-bank-rating, .power-bank-price, .power-bank-option{
-    padding-left:1rem;
-} */
+
 .power-bank-name-product{
+   height:45px;
     padding-top: 1rem;
     padding-left:0.5rem;
     padding-bottom: 1rem;
@@ -216,23 +218,16 @@ padding-right: 1rem;
 .power-bank-product{
    margin: 1rem 0.5rem;
     border-radius: 10px;
-    padding-left: 0.5rem;
-    padding-top:1rem;
-    width:230px;
-    box-shadow: 1px 0px 2px 1px #33333330;
-    /* width:200px; */
-}
-.power-bank-product{
-   margin: 1rem 0.5rem;
-    border-radius: 10px;
     padding-left: 1rem;
     padding-top:1rem;
     width:230px;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 1px 0px 2px 1px #33333330;
     /* width:200px; */
 }
 .power-bank-name-product{
+    height:46px;
+    padding:1rem 0.5rem;
     font-size:1rem;
 }
 .power-bank-images{
@@ -243,6 +238,8 @@ padding-right: 1rem;
     border-radius: 10px;
 }
 .power-bank-rating{
+    margin-top: 2rem;
+    /* height:45px; */
     width:120px;
     display:flex;
     justify-content: space-between;
