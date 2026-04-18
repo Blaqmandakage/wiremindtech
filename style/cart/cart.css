@@ -67,10 +67,12 @@ body{
     cursor: pointer;
     color:red
 }
- .quantity-number{
+ .quantity-numbers{
+    
     cursor:pointer;
     color:green
  }
+ 
 
 @media (min-width: 40rem){
     .totals{
@@ -149,7 +151,8 @@ body{
     cursor: pointer;
     color:red
 }
- .quantity-number{
+ .quantity-numbers{
+    padding-top:1.5rem;
     cursor:pointer;
     color:green
  }

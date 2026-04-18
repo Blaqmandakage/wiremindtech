@@ -203,6 +203,28 @@ padding-right: 1rem;
     margin: 0.5rem auto;
 
 }
+.added-to-cart {
+  color: rgb(6, 125, 98);
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-left: 0.5rem;
+
+  /* At first, the "Added to cart" message will
+     be invisible. Use JavaScript to change the
+     opacity and make it visible. */
+  opacity: 0;
+}
+
+.added-to-cart img {
+  height: 20px;
+  margin-right: 1rem;
+}
+.added-to-cart-visible{
+    opacity: 1
+}
 .power-bank-add-to-cart:hover{
     background-color: black;
     color:white
@@ -214,6 +236,9 @@ padding-right: 1rem;
     display: grid;
    grid-template-columns: repeat(4, 1fr);
 
+}
+.added-to-cart{
+    font-size: 1rem;
 }
 .power-bank-product{
    margin: 1rem 0.5rem;
