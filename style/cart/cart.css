@@ -1,8 +1,9 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap");
 
 body{
     font-family: "Momo" sans-serif;
-} */
+    position: relative;
+} 
 .totals{
     position: relative;
 }.total-container-for-cart{
@@ -272,4 +273,15 @@ body{
     display:none;
  }
 
+ }
+
+ .empty-cart{
+     font-size:3rem;
+    margin:0;
+    position:aboslute;
+    top:0;
+ }
+ .empty-cart .empty-cart-file{
+    text-align: center;
+   
  }

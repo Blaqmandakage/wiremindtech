@@ -129,7 +129,7 @@ import { formatNaira } from "./utils/moneyf.js";
 function renderEmptyCart() {
   document.querySelector(".js-total-container-for-cart").innerHTML = `
     <div class="empty-cart">
-      <p>Your cart is empty 🛒</p>
+      <p class="empty-cart-file">Your cart is empty 🛒</p>
     </div>
   `;
 
