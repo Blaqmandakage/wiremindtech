@@ -1,8 +1,9 @@
-import { powerBankCart, removeFromCart } from "./data/carts.js";
+import { powerBankCart, removeFromCart, updateCartQuantity } from "./data/carts.js";
 import { powerBankGet} from "./data/products.js";
 import { formatNaira } from "./utils/moneyf.js";
 import { backDrop } from "./utils/backdrop.js";
 import { darkmode } from "./utils/darkmode.js";
+import { renderingSummary } from "./data/loadcart/loadrender.js";
 backDrop();
 darkmode()
 
@@ -52,7 +53,8 @@ darkmode()
              if (powerBankCart.length === 0) {
             renderEmptyCart();
             } else {
-                renderingSummary()         // re-render summary when items remain
+                renderingSummary()   
+                     // re-render summary when items remain
             }
            
          
@@ -61,72 +63,12 @@ darkmode()
     })
      updateCartQuantity()
 
-     function updateCartQuantity(){
-  let powerBankCartQuantity = 0;
-     powerBankCart.forEach((powerBankCartItem)=>{
-      powerBankCartQuantity += powerBankCartItem.quantity
-     })
- document.querySelector(".js-check-out-return")
- .innerHTML = `${powerBankCartQuantity} items`
-
- }
 
 
  //summary
  renderingSummary()
- function renderingSummary(){
-  let powerBankProductNaira = 0
-    powerBankCart.forEach((powerBankCartItem)=>{  
-    const product = powerBankGet(powerBankCartItem.powerBankProductId)
-    powerBankProductNaira += product.priceNaira * powerBankCartItem.quantity;
-   
- }); 
 
-    const totalBeforeTax = powerBankProductNaira
-    const taxNaira =  totalBeforeTax * 0.05;
-    const totalNaira = totalBeforeTax - taxNaira;
 
-    const summaryHTML = `
-
-             <h2  class="review-order">Review Your Order</h2>
-             <div class="order-summary">
-            <div class="both">
-             <h3 class="order-summary-font js-summary">Order Summary</h3>
-                <div class="flex item">
-                <p>item (2)</p>
-                <p class="cart-summary-price">${formatNaira(powerBankProductNaira)}</p>
-                </div>
-                <div class="flex item">
-                <p>Delivery fee</p>
-                <p class="cart-summary-price">${formatNaira(0)}</p>
-                </div>
-               
-                
-                <hr>
-                
-                 <div class="flex item">
-                <p>Total before Discount</p>
-                <p class="cart-summary-price">${formatNaira(totalBeforeTax)}</p>
-                </div>
-                
-                <div class="flex item">
-                <p>Discount(5%)</p>
-                <p class="cart-summary-price">${formatNaira(taxNaira)}</p>
-                </div>
-
-                <hr>
-                <div class="flex item">
-                <p class="order-total">Order total:</p>
-                <p class="order-total-price">${formatNaira(totalNaira)}</p>
-                </div>
-                <button class="place-your-order">Place your order</button>
-            </div>
-            </div>
-    `
- document.querySelector(".js-summary")
-.innerHTML = summaryHTML;
-
- }
      
 
 function renderEmptyCart() {

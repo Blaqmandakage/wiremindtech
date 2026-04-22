@@ -58,3 +58,31 @@ export function addTocart(powerBankProductId){
 function saveToStorage(){
     localStorage.setItem("powerBankCart", JSON.stringify(powerBankCart))
 }
+
+
+
+//for the check
+  export    function updateCartQuantity(){
+  let powerBankCartQuantity = 0;
+     powerBankCart.forEach((powerBankCartItem)=>{
+      powerBankCartQuantity += powerBankCartItem.quantity
+     })
+ document.querySelector(".js-check-out-return")
+ .innerHTML = `${powerBankCartQuantity} items`
+
+ }
+
+
+//for the item
+export function updateCartQuantitySummary() {
+  let powerBankCartQuantitySummary = 0;
+
+  powerBankCart.forEach((powerBankCartItem) => {
+    powerBankCartQuantitySummary += powerBankCartItem.quantity;
+  });
+
+  const summaryElement = document.querySelector(".js-summary-show-item");
+  if (summaryElement) {
+    summaryElement.innerHTML = powerBankCartQuantitySummary;
+  }
+}
