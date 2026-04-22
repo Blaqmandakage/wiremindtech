@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg-color: #ffffff;
   --text-color: #111111;
   --card-color: #f5f5f5;
@@ -11,11 +11,15 @@ body.dark-mode {
 }
 
 /* Apply them */
-body {
+/* body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
 .cart-flex {
   background-color: var(--card-color);
+}  */
+  .dark-mode {
+  background-color: black;
+  color: white;
 }
