@@ -174,7 +174,10 @@ body{
 
 }
 
-
+.summary-show-item{
+    text-decoration: none;
+    font-weight: 700;
+}
 
 .review-order{
     padding-left:1rem;
