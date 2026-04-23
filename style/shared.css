@@ -258,7 +258,7 @@ body{
 .backdrop {
   height: 100vh;
   width: 100%;
-  background-color: #000000ad;
+  background-color: #000000d5;
   position: fixed;
   top: 0;
   left: 0;
@@ -273,11 +273,11 @@ body{
 }
 .hide-backdrop {
   height: 100vh;
-  background-color: #0b2808;
+  background-color: #0a1f08;
   color:white;
 text-transform: capitalize;
   position: fixed;
-  top: 5.3rem;
+  top: 5.29rem;
   right: 0;
   font-size: 1.5rem;
   padding-left: 1rem;
