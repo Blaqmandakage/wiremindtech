@@ -4,8 +4,10 @@ import { formatNaira } from "./utils/moneyf.js";
 import { backDrop } from "./utils/backdrop.js";
 import { darkmode } from "./utils/darkmode.js";
 import { renderingSummary } from "./data/loadcart/loadrender.js";
+import { showlogged } from "./utils/show.js";
 backDrop();
 darkmode()
+showlogged();
 
 
      let cartSummaryHTML = "";

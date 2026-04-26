@@ -1,15 +1,27 @@
 import { formatNaira } from "./utils/moneyf.js"
-import { powerBankProducts } from "./data/products.js";
 import { powerBankCart, addTocart } from "./data/carts.js";  
 import { backDrop } from "./utils/backdrop.js";
 import { darkmode } from "./utils/darkmode.js";
+import { showlogged } from "./utils/show.js";
+import { powerBankProducts } from "./data/products.js";
 backDrop();
 darkmode();  
-let powerBankProductsHTML = "";
+showlogged();
 
-powerBankProducts.forEach((productbank)=>{
+// async function loadProducts() {
+//   const res = await fetch("http://localhost:5000/api/products");
+//   const products = await res.json();
 
-    const html = `
+//   renderProducts(products);
+// }
+
+
+renderProducts(powerBankProducts);
+function renderProducts(powerBankProducts) {
+    let powerBankProductsHTML = "";
+         powerBankProducts.forEach((productbank)=>{
+
+        const html = `
          <div class="power-bank-product">
             <div class="power-bank-images">
                 <img src=${productbank.image} class="power-bank-image">
@@ -50,11 +62,26 @@ powerBankProducts.forEach((productbank)=>{
     `
 
     powerBankProductsHTML += html;
-
-    document.querySelector(".js-powerbank-products-grid-display")
-    .innerHTML = powerBankProductsHTML;
     
 })
+
+  document.querySelector(".js-powerbank-products-grid-display")
+    .innerHTML = powerBankProductsHTML;
+
+    document.querySelectorAll(".js-power-bank-cart")
+.forEach((button)=>{
+    button.addEventListener("click", ()=>{
+        const {powerBankProductId} = button.dataset;
+        addTocart(powerBankProductId);
+        updateCartQuantity();
+        addVisible(powerBankProductId)
+               
+    })
+   
+})
+}
+// loadProducts();
+
 function updateCartQuantity(){
      let powerBankCartQuantity = 0;
        powerBankCart.forEach((powerBankCartItem)=>{
@@ -77,14 +104,5 @@ function addVisible(powerBankProductId){
 }
 
  updateCartQuantity();
-document.querySelectorAll(".js-power-bank-cart")
-.forEach((button)=>{
-    button.addEventListener("click", ()=>{
-        const {powerBankProductId} = button.dataset;
-        addTocart(powerBankProductId);
-        updateCartQuantity();
-        addVisible(powerBankProductId)
-               
-    })
-   
-})
+
+
